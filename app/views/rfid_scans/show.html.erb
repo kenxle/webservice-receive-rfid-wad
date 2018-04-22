@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rfid:</strong>
+  <%= @rfid_scan.rfid %>
+</p>
+
+<p>
+  <strong>Scan time:</strong>
+  <%= @rfid_scan.scan_time %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @rfid_scan.status %>
+</p>
+
+<%= link_to 'Edit', edit_rfid_scan_path(@rfid_scan) %> |
+<%= link_to 'Back', rfid_scans_path %>

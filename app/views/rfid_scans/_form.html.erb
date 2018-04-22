@@ -1,0 +1,32 @@
+<%= form_with(model: rfid_scan, local: true) do |form| %>
+  <% if rfid_scan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rfid_scan.errors.count, "error") %> prohibited this rfid_scan from being saved:</h2>
+
+      <ul>
+      <% rfid_scan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rfid %>
+    <%= form.text_field :rfid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scan_time %>
+    <%= form.datetime_select :scan_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
