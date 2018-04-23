@@ -31,12 +31,20 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-gem 'capistrano-bundler'
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'rvm1-capistrano3', require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+
+
 gem 'passenger'
 gem 'capistrano-passenger'
 gem 'rvm'
-gem 'rvm1-capistrano3', require: false
 
 # gem 'bundler'
 
