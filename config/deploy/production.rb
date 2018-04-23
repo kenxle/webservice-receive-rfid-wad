@@ -7,11 +7,11 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-role :app, %w{kenstclair@23.239.8.185}
-role :web, %w{kenstclair@23.239.8.185}
-role :db,  %w{kenstclair@23.239.8.185}
+# role :app, %w{kenstclair@23.239.8.185}
+# role :web, %w{kenstclair@23.239.8.185}
+# role :db,  %w{kenstclair@23.239.8.185}
 
-server '23.239.8.185', user: 'kenstclair', roles: %w{web app}
+server '23.239.8.185', user: 'kenstclair', roles: %w{web app db}
 
 set :branch, "master"
 set :user, "kenstclair"
