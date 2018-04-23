@@ -214,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  capistrano-bundler
   capistrano-rails
   capybara (>= 2.15, < 4.0)
   chromedriver-helper

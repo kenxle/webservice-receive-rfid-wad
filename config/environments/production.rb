@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #might need these
+  # role :app, %w{kenstclair@23.239.8.185}
+  # role :web, %w{kenstclair@23.239.8.185}
+  # role :db,  %w{kenstclair@23.239.8.185}
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
