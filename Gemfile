@@ -32,19 +32,19 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 group :development do
-    gem 'capistrano',         require: false
-    gem 'capistrano-rvm',     require: false
+    gem 'capistrano', "~> 3.10", require: false
+    # gem 'capistrano-rvm',     require: false
     gem 'rvm1-capistrano3', require: false
-    gem 'capistrano-rails',   require: false
+    gem 'capistrano-rails', "~> 1.3", require: false
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
 end
 
 
 
-gem 'passenger'
+# gem 'passenger'
 gem 'capistrano-passenger'
-gem 'rvm'
+# gem 'rvm'
 
 # gem 'bundler'
 

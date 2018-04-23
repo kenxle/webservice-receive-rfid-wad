@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     #api
   namespace :api do
     namespace :v1 do
-      resources :rfid_scans, only: [:create, :show]
+      resources :rfid_scans, only: [:create]
     end
   end
 end
