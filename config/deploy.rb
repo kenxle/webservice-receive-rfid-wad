@@ -51,13 +51,13 @@ set :rvm_ruby_string, '2.3.3'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-namespace :app do
-  task :update_rvm_key do
-  	on roles(:app) do 
-      execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
-    end
-  end
-end
+# namespace :app do
+#   task :update_rvm_key do
+#   	on roles(:app) do 
+#       execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+#     end
+#   end
+# end
 
 
 namespace :deploy do
@@ -72,23 +72,23 @@ namespace :deploy do
 #     end
 #   end
 
-  desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      # before 'deploy:restart', 'puma:start'
-      before 'deploy', 'rvm1:install:rvm'  # install/update RVM
-	  before 'deploy', 'rvm1:install:ruby'  # install/update Ruby
-      invoke 'deploy'
-    end
-  end
+  # desc 'Initial Deploy'
+  # task :initial do
+  #   on roles(:app) do
+  #     # before 'deploy:restart', 'puma:start'
+  #     before 'deploy', 'rvm1:install:rvm'  # install/update RVM
+	 #  before 'deploy', 'rvm1:install:ruby'  # install/update Ruby
+  #     invoke 'deploy'
+  #   end
+  # end
 
-  desc 'ENV for secrets'
-  task :set_key_base do
-    on roles(:app) do
-      execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
-    end
-  end
-  before 'deploy:assets:precompile', 'deploy:set_key_base'  # 
+  # desc 'ENV for secrets'
+  # task :set_key_base do
+  #   on roles(:app) do
+  #     execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
+  #   end
+  # end
+  # before 'deploy:assets:precompile', 'deploy:set_key_base'  # 
 
   # desc 'Restart application'
   # task :restart do
@@ -102,7 +102,7 @@ namespace :deploy do
   # after  :finishing,    :cleanup
   # after  :finishing,    :restart
 end
-before "rvm1:install:rvm", "app:update_rvm_key"
+# before "rvm1:install:rvm", "app:update_rvm_key"
 
 
 
