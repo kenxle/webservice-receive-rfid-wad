@@ -85,7 +85,7 @@ namespace :deploy do
   desc 'ENV for secrets'
   task :set_key_base do
     on roles(:app) do
-      execute "export SECRET_KEY_BASE=337c936739854cf403faf831cf08f46a"
+      execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
     end
   end
   before 'deploy:assets:precompile', 'deploy:set_key_base'  # 
