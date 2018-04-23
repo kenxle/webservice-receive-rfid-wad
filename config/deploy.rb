@@ -51,6 +51,15 @@ set :rvm_ruby_string, '2.3.3'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
+namespace :app do
+  task :update_rvm_key do
+    execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+  end
+end
+before "rvm1:install:rvm", "app:update_rvm_key"
+
+before 'deploy', 'rvm1:install:rvm'  # install/update RVM
+before 'deploy', 'rvm1:install:ruby'  # install/update Ruby
 
 namespace :deploy do
 
