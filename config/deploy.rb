@@ -2,7 +2,7 @@
 lock "~> 3.10.2"
 
 set :application, "rfid_prototype"
-set :repo_url, "git@23.239.8.185:~/nasa.juggl.me.git"
+set :repo_url, "kenstclair@23.239.8.185:/home/git/nasa.juggl.me.git"
 
 set :ssh_options, { :forward_agent => true }
 # Default branch is :master
@@ -10,7 +10,11 @@ set :ssh_options, { :forward_agent => true }
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/kenstclair/public/nasa.juggl.me"
+set :passenger_restart_with_touch, true
 
+set :rvm_type, :user
+set :rvm_ruby_string, '2.3.3'
+# require 'rvm/capistrano'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -38,3 +42,9 @@ set :deploy_to, "/home/kenstclair/public/nasa.juggl.me"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+
+namespace :deploy do
+
+
+end

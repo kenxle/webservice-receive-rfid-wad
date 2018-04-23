@@ -27,7 +27,7 @@ production:
   # reconnect: false
   # database: rfid_prototype_production
   # pool: 5
-  # username: kenstclair
+  # username: rfidapp
   # password: mhci2018mhci2018
   # host: localhost
-  # database: db/production.sqlite3
+  database: db/production.sqlite3

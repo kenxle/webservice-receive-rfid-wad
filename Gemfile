@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "https://github.com/rfid_prototype.git" }
 
 ruby '2.3.3'
 
@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-bundler'
+gem 'passenger'
+gem 'capistrano-passenger'
+gem 'rvm'
+gem 'capistrano-rvm'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
