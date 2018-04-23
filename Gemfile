@@ -36,7 +36,9 @@ gem 'capistrano-bundler'
 gem 'passenger'
 gem 'capistrano-passenger'
 gem 'rvm'
-gem 'rvm-capistrano'
+gem 'rvm1-capistrano3', require: false
+
+# gem 'bundler'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

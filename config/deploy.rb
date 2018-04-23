@@ -12,8 +12,16 @@ set :ssh_options, { :forward_agent => true }
 set :deploy_to, "/home/kenstclair/public/nasa.juggl.me"
 set :passenger_restart_with_touch, true
 
+
 set :rvm_type, :user
 set :rvm_ruby_string, '2.3.3'
+
+# set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
+# set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
+
+# before 'deploy', 'rvm:install_rvm'  # install/update RVM
+# before 'deploy', 'rvm:install_ruby' # install Ruby and create gemset, OR:
+
 # require 'rvm/capistrano'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
