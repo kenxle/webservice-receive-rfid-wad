@@ -100,7 +100,7 @@ namespace :deploy do
 
   task :more_links do
     on roles(:app) do
-      execute "ln -s #{deploy_to}/shared/config/master.key #{release_path}/config/master.key"
+      # execute "ln -s #{deploy_to}/shared/config/master.key #{release_path}/config/master.key"
     end
   end
   before 'deploy:assets:precompile', 'deploy:more_links'
