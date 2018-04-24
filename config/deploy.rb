@@ -85,7 +85,11 @@ namespace :deploy do
   desc 'ENV for secrets'
   task :set_key_base do
     on roles(:app) do 
+      # execute "export RAILS_MASTER_KEY=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
       # execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
+      # execute "echo $ENV[SECRET_KEY_BASE]"
+      # execute "echo $RAILS_MASTER_KEY"
+      append :linked_files, "/home/kenstclair/public/nasa.juggl.me/shared/config"
       # execute "cd #{deploy_to} &&  /home/kenstclair/public/nasa.juggl.me/rvm1scripts/rvm-auto.sh . gem install rails && /home/kenstclair/public/nasa.juggl.me/rvm1scripts/rvm-auto.sh . rails credentials:edit"
       # path_secrets_yml = "config/secrets.yml"
       # secrets_yml = %[production:\n  secret_key_base:\n    #{`bundle exec rake secret`.strip}]
