@@ -31,7 +31,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'capistrano', '~> 2.15' 
+# gem 'capistrano-rails', '~> 1.0.0', group: :development
+gem 'capistrano'
+gem 'capistrano-rails', group: :development
+# gem 'rvm-capistrano'
+gem 'capistrano-rvm'
+# gem 'rvm1-capistrano3'
+# gem 'capistrano-puma'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

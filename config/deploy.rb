@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.2"
+# lock "~> 3.10.2"
 
 set :application, "rfid_prototype"
 set :repo_url, "kenstclair@23.239.8.185:/home/git/nasa.juggl.me.git"
@@ -84,8 +84,12 @@ namespace :deploy do
 
   desc 'ENV for secrets'
   task :set_key_base do
-    on roles(:app) do
-      execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
+    on roles(:app) do 
+      # execute "export SECRET_KEY_BASE=0a9a2331e9c3356d9eb4cb97f98ca5cafe440efa3f83651c378942deff6fc07593f17782d79a20bcb5e43d54c482d86d403cbba5302302be156b97c58e232ec1"
+      # execute "cd #{deploy_to} &&  /home/kenstclair/public/nasa.juggl.me/rvm1scripts/rvm-auto.sh . gem install rails && /home/kenstclair/public/nasa.juggl.me/rvm1scripts/rvm-auto.sh . rails credentials:edit"
+      # path_secrets_yml = "config/secrets.yml"
+      # secrets_yml = %[production:\n  secret_key_base:\n    #{`bundle exec rake secret`.strip}]
+      # execute %[test -e #{path_secrets_yml} || echo "#{secrets_yml}" > #{path_secrets_yml}]
     end
   end
   before 'deploy:assets:precompile', 'deploy:set_key_base'  # 
