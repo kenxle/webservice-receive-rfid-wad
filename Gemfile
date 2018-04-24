@@ -38,6 +38,7 @@ gem 'capistrano-rails', group: :development
 # gem 'rvm-capistrano'
 gem 'capistrano-rvm'
 # gem 'rvm1-capistrano3'
+gem 'capistrano-passenger'
 gem 'capistrano-puma'
 
 # Reduces boot times through caching; required in config/boot.rb
