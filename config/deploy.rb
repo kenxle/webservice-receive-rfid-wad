@@ -100,9 +100,10 @@ namespace :deploy do
 
   task :more_links do
     on roles(:app) do
-      execute 'ln -s /home/kenstclair/public/nasa.juggl.me/shared/config/master.key /home/kenstclair/public/nasa.juggl.me/releases/20180424044618/config/master.key'
+      execute "ln -s #{deploy_to}/shared/config/master.key #{release_path}/config/master.key"
     end
   end
+  before 'deploy:assets:precompile', 'deploy:more_links'
 
   # desc 'Restart application'
   # task :restart do
