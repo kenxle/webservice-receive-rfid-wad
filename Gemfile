@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/rfid_prototype.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
 
@@ -31,22 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
-group :development do
-    gem 'capistrano', "~> 3.10", require: false
-    # gem 'capistrano-rvm',     require: false
-    gem 'rvm1-capistrano3', require: false
-    gem 'capistrano-rails', "~> 1.3", require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
-end
-
-
-
-# gem 'passenger'
-gem 'capistrano-passenger'
-# gem 'rvm'
-
-# gem 'bundler'
+# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -71,10 +56,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-end
-
-group :production do
-  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
