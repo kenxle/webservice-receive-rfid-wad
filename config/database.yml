@@ -22,4 +22,12 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: rfid_prototype_production
+  pool: 5
+  username: rfidapp
+  password: mhci2018mhci2018
+  host: localhost
+  # database: db/production.sqlite3
