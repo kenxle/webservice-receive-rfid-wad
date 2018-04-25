@@ -12,9 +12,15 @@ set :ssh_options, { :forward_agent => true }
 set :deploy_to, "/home/kenstclair/public/nasa.juggl.me"
 set :passenger_restart_with_touch, true
 
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+# set :rbenv_ruby, '2.5.0'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 
-set :rvm_type, :user
-set :rvm_ruby_string, '2.3.3'
+# set :rvm_type, :user
+# set :rvm_ruby_string, '2.3.3'
+# set :rvm_custom_path, '/usr'
 
 # set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 # set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
