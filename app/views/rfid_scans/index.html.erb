@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rfid Scans</h1>
+<h1>Tech Reports</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Rfid</th>
+      <th>Part</th>
       <th>Scan time</th>
       <th>Status</th>
       <th colspan="3"></th>
@@ -18,9 +18,9 @@
         <td><%= rfid_scan.rfid %></td>
         <td><%= rfid_scan.scan_time %></td>
         <td><%= rfid_scan.status %></td>
-        <td><%= link_to 'Show Yo', rfid_scan %></td>
-        <td><%= link_to 'Edit', edit_rfid_scan_path(rfid_scan) %></td>
-        <td><%= link_to 'Destroy', rfid_scan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', rfid_scan %></td>
+        <!--td><%= link_to 'Edit', edit_rfid_scan_path(rfid_scan) %></td>
+        <td><%= link_to 'Destroy', rfid_scan, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
       </tr>
     <% end %>
   </tbody>
