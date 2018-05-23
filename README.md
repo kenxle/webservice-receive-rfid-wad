@@ -6,10 +6,6 @@ A fully-deployed web service running on a linode virtual server and using Ruby o
 * Ruby version
 2.5.0
 
-* System dependencies
-
-* Configuration
-
 * Database 
 mysql
 
