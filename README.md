@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A fully-deployed web service running on a linode virtual server and using Ruby on Rails. Capistrano is used for deployment, with a private git repo running on the linode. MySql2 is used for data storage. 
 
-Things you may want to cover:
 
 * Ruby version
+2.5.0
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* Database 
+mysql
 
 * Deployment instructions
+bundle exec cap production deploy
 
-* ...
+Capistrano is used for deployment. 
+
